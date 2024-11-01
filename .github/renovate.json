@@ -10,20 +10,14 @@
       "matchFileNames": ["**/pom.xml"],
       "matchUpdateTypes": ["patch"],
       "automerge": true
-    }
-  ],
-  "customManagers": [
+    },
     {
-      "customType": "regex",
-      "fileMatch": ["\\.mise\\.toml$"],
-      "matchStrings": [
-        "^(?<depName>[a-zA-Z0-9_-]+)\\s*=\\s*\"ref:(?<currentValue>.*?)\"$"
-      ],
-      "depNameTemplate": "{{depName}}",
-      "versioningTemplate": "semver",
-      "datasourceTemplate": "pypi",
-      "extractVersionTemplate": "{{newVersion}}",
-      "autoReplaceStringTemplate": "{{depName}} = \"ref:{{newVersion}}\""
+      "matchFileNames": [".mise.toml$"],
+      "packagePatterns": ["^awscli$"],
+      "datasource": "github-tags",
+      "registryUrls": ["https://github.com/aws/aws-cli"],
+      "versioning": "semver",
+      "extractVersion": "ref:{{{newVersion}}}",
     }
   ]
 }
