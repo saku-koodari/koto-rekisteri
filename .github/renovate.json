@@ -17,7 +17,7 @@
       "datasource": "github-tags",
       "registryUrls": ["https://github.com/aws/aws-cli"],
       "versioning": "semver",
-      "extractVersion": "ref:{{{newVersion}}}",
+      "extractVersion": "ref:{{{newVersion}}}"
     }
   ]
 }
