@@ -12,12 +12,10 @@
       "automerge": true
     },
     {
-      "matchFileNames": [".mise.toml$"],
-      "packagePatterns": ["^awscli$"],
-      "datasource": "github-tags",
-      "registryUrls": ["https://github.com/aws/aws-cli"],
+      "matchPackageNames": ["awscli"],
       "versioning": "semver",
-      "extractVersion": "ref:{{{newVersion}}}"
+      "extractVersion": "^ref:(?<version>.*)$",
+      "replaceVersion": "ref:{{{newVersion}}}"
     }
   ]
 }
